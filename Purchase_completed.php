@@ -1,4 +1,5 @@
 <?php
+echo "無資料接收";
 //获取PayPal返回的数据
 $item_number = $_POST['item_number']; //商品编号
 $txn_id = $_POST['txn_id']; //交易ID
