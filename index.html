@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style> /* 這塊<style>區域是css */
+
+        .navbar {   /* 此.navbar為最上方的導航欄。(包含 返回主頁、會員登入) */
+            position: sticky;
+            top: 0;
+            background-image: url('background.jpg'); /* 背景圖片 */
+            background-color: #ddd;
+            padding: 100px 10px 10px 10px;
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-end;
+            max-width: 800px;
+            margin: auto;
+        }
+            .product-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .product-card {
+            border: 1px solid #000;
+            background-image: url('background.jpg'); /* 背景圖片 */
+            margin: 10px; /* 此處若改成30，每行會只有兩個商品區塊 */
+            padding: 10px;
+            width: calc(33% - 30px); /* 讓每行只有三個商品區塊 */
+            box-sizing: border-box; /* 確保邊框和內距不會影響到元素的總寬度 */
+        }
+        .product-image {
+            width: 100%; /* 讓圖片的寬度自動適應商品卡片的寬度 */
+            height: auto; /* 讓圖片的高度自動適應圖片的寬度 */
+            object-fit: contain;  /* 看到整張圖片 */
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <button onclick="location.href='index.html'">返回主頁</button>
+        <button onclick="location.href='page1.html'">分頁按鈕1</button>
+        <button onclick="location.href='page2.html'">分頁按鈕2</button>
+        <button onclick="location.href='login.html'">會員登入</button>
+        <button onclick="location.href='order.html'">訂單查詢</button>
+    </div>
+
+    <div class="product-grid">
+        <div class="product-card">
+            <img src="product1.jpg" alt="商品1" class="product-image">
+            <h3>商品1</h3>
+            <p>這是商品1的描述。</p>
+            <button class="add-to-cart">加入購物車</button>
+        </div>
+        <div class="product-card">
+            <img src="product2.jpg" alt="商品2" class="product-image">
+            <h3>商品2</h3>
+            <p>這是商品2的描述。</p>
+            <button class="add-to-cart">加入購物車</button>
+        </div>
+        <div class="product-card">
+            <img src="product3.jpg" alt="商品3" class="product-image">
+            <h3>商品3</h3>
+            <p>這是商品3的描述。</p>
+            <button class="add-to-cart">加入購物車</button>
+        </div>
+        <div class="product-card">
+            <img src="product4.jpg" alt="商品4" class="product-image">
+            <h3>商品4</h3>
+            <p>這是商品4的描述。</p>
+            <button class="add-to-cart">加入購物車</button>
+        </div>
+        <div class="product-card">
+            <img src="product4.jpg" alt="商品5" class="product-image">
+            <h3>商品4</h3>
+            <p>這是商品4的描述。</p>
+            <button class="add-to-cart">加入購物車</button>
+        </div>
+        <div class="product-card">
+            <img src="product4.jpg" alt="商品6" class="product-image">
+            <h3>商品4</h3>
+            <p>這是商品4的描述。</p>
+            <button class="add-to-cart">加入購物車</button>
+        </div>
+    </div>
+
+    <script>  /* 這塊<script>區域是 JavaScript */
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', () => {
+                alert('你點擊了' + button.parentElement.querySelector('h3').textContent + ' 的加入購物車按鈕');
+            });
+        });
+    </script>
+</body>
+</html>
